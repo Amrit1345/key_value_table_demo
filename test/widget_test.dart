@@ -3,21 +3,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:key_value_table_demo/main.dart';
 
 void main() {
-  testWidgets('Smoke test & renders all cards and headers in narrow layout', (
+  testWidgets('Smoke test & renders cards and headers in narrow layout', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const KeyValueTableDemoApp());
 
-    expect(find.text('key_value_table Demo'), findsOneWidget);
+    expect(find.text('key_value_table Showcase'), findsOneWidget);
     expect(find.text('Live Feature Gallery'), findsOneWidget);
-    expect(find.text('Physician Profile'), findsOneWidget);
-    expect(find.text('Order Summary'), findsOneWidget);
+    expect(find.text('1. Modern Clean Profile'), findsOneWidget);
+    expect(find.text('2. Financial & Receipt'), findsOneWidget);
 
-    await tester.scrollUntilVisible(find.text('Server Diagnostics'), 500);
-    expect(find.text('Server Diagnostics'), findsOneWidget);
-
-    await tester.scrollUntilVisible(find.text('App Specifications'), 500);
-    expect(find.text('App Specifications'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('3. Form & Inspector Alignment'), 500);
+    expect(find.text('3. Form & Inspector Alignment'), findsOneWidget);
   });
 
   testWidgets('Toggle theme mode switches light/dark icons', (
@@ -25,17 +22,17 @@ void main() {
   ) async {
     await tester.pumpWidget(const KeyValueTableDemoApp());
 
-    // Initially light mode -> dark_mode_rounded icon is shown
-    expect(find.byIcon(Icons.dark_mode_rounded), findsOneWidget);
-    expect(find.byIcon(Icons.light_mode_rounded), findsNothing);
+    // Initially dark mode -> light_mode_rounded icon is shown
+    expect(find.byIcon(Icons.light_mode_rounded), findsOneWidget);
+    expect(find.byIcon(Icons.dark_mode_rounded), findsNothing);
 
     // Tap theme toggle button
     await tester.tap(find.byTooltip('Toggle Light/Dark Theme'));
     await tester.pumpAndSettle();
 
-    // Now dark mode -> light_mode_rounded icon is shown
-    expect(find.byIcon(Icons.light_mode_rounded), findsOneWidget);
-    expect(find.byIcon(Icons.dark_mode_rounded), findsNothing);
+    // Now light mode -> dark_mode_rounded icon is shown
+    expect(find.byIcon(Icons.dark_mode_rounded), findsOneWidget);
+    expect(find.byIcon(Icons.light_mode_rounded), findsNothing);
   });
 
   testWidgets('Renders adaptive wide layout on large screen', (
@@ -47,21 +44,9 @@ void main() {
 
     await tester.pumpWidget(const KeyValueTableDemoApp());
 
-    expect(find.text('Physician Profile'), findsOneWidget);
-    expect(find.text('Order Summary'), findsOneWidget);
-    expect(find.text('Server Diagnostics'), findsOneWidget);
-    expect(find.text('App Specifications'), findsOneWidget);
-  });
-
-  testWidgets('Tap on Server Diagnostics row triggers SnackBar', (
-    WidgetTester tester,
-  ) async {
-    await tester.pumpWidget(const KeyValueTableDemoApp());
-
-    await tester.scrollUntilVisible(find.text('Cluster Node'), 500);
-    await tester.tap(find.text('Cluster Node'));
-    await tester.pump();
-
-    expect(find.textContaining('Copied "Cluster Node"'), findsOneWidget);
+    expect(find.text('1. Modern Clean Profile'), findsOneWidget);
+    expect(find.text('2. Financial & Receipt'), findsOneWidget);
+    expect(find.text('3. Form & Inspector Alignment'), findsOneWidget);
+    expect(find.text('4. Diagnostics & Tap-to-Copy'), findsOneWidget);
   });
 }

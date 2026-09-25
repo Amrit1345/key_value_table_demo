@@ -1,20 +1,42 @@
 # key_value_table_demo
 
-A showcase and screenshot companion app for the [`key_value_table`](https://pub.dev/packages/key_value_table) Flutter package.
+A live showcase and screenshot companion app for the [`key_value_table`](https://pub.dev/packages/key_value_table) Flutter package.
+
+---
+
+### Desktop & Web Showcase
+
+<p align="center">
+  <img src="doc/screenshots/demo_dark.png" alt="KeyValueTable Demo Dark Mode" width="720"/>
+</p>
+
+<p align="center">
+  <img src="doc/screenshots/demo_light.png" alt="KeyValueTable Demo Light Mode" width="720"/>
+</p>
+
+### Mobile Responsive Showcase
+
+<p align="center">
+  <img src="doc/screenshots/demo_dark_mobile.png" alt="KeyValueTable Demo Mobile Dark Mode" width="350"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="doc/screenshots/demo_light_mobile.png" alt="KeyValueTable Demo Mobile Light Mode" width="350"/>
+</p>
 
 ---
 
 ## Features
 
-- **Light & Dark Theme Toggle:** Easily toggle between light and dark Material 3 themes directly from the AppBar.
+- **Light & Dark Theme Toggle:** Easily toggle between light and dark Material 3 themes directly from the AppBar (or launch with `?theme=dark` / `?theme=light`).
 - **Adaptive Responsive Layout:**
-  - **Wide screens (> 860px):** 2-column side-by-side grid.
-  - **Mobile screens (≤ 860px):** Single-column scrollable feed.
+  - **Wide screens (> 860px):** 2-column side-by-side grid showcasing all cards simultaneously.
+  - **Mobile screens (≤ 860px):** Clean single-column scrollable feed.
 - **Showcase Cards:**
-  1. **Physician Profile Card:** Automatic intrinsic column alignment with varying key lengths and colon separators.
-  2. **Order Summary Card:** Custom rich widgets including badges, status chips, and payment method rows.
-  3. **Server Diagnostics Card:** Zebra-striping (`alternateRowColor`), custom arrow separators (`→`), and interactive `onRowTap` with clipboard copy and floating `SnackBar`.
-  4. **App Specifications Card:** Custom `TableBorder` dividers and custom separator character (`::`) with custom styling.
+  1. **Modern Clean Profile:** Default whitespace-separated 2-column layout without colons.
+  2. **Financial & E-Commerce Receipt:** Right-aligned numeric/currency values with horizontal row dividers.
+  3. **Form & Inspector Alignment:** Right-aligned keys with centered colon gutters and left-aligned values.
+  4. **Server Diagnostics:** Compact density, zebra striping (`alternateRowColor`), one-tap clipboard copy (`copyable: true`), status badges, and null placeholders.
+  5. **Responsive Stacked Layout:** Label on top, value below — ideal for cards, mobile screens, and multiline values.
+  6. **Granular Control (`KeyValueItem`):** Leading icons, trailing verified badges, tooltips, custom styles, and action buttons.
 
 ---
 
